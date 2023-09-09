@@ -22,17 +22,14 @@ function DateFilter() {
 
   const handleDropdown1Change = (e) => {
     setDropdown1Value(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleDropdown2Change = (e) => {
     setDropdown2Value(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleDropdown3Change = (e) => {
     setDropdown3Value(e.target.value);
-    console.log(e.target.value);
   };
 
   const nextPage = () => {
@@ -55,7 +52,6 @@ function DateFilter() {
     const end = moment(endDate);
 
     if (dropdown1Value === 'All' && dropdown3Value === 'Month') {
-      console.log('insde if');
       while (current.isSameOrBefore(end)) {
         if (current.format('dddd') === dropdown2Value) {
           results.push(current.format('MMMM D, YYYY'));
@@ -86,13 +82,11 @@ function DateFilter() {
               break;
             case '4':
               if (current.date() >= 22 && current.date() <= 28) {
-                console.log(current.date());
                 results.push(current.format('MMMM D, YYYY'));
               }
               break;
             case '5':
               if (current.date() >= 29 && current.date() <= 4) {
-                console.log(current.date());
                 results.push(current.format('MMMM D, YYYY'));
               }
               break;
@@ -100,22 +94,22 @@ function DateFilter() {
         }
         current.add(1, 'day');
       }
-      return results;
     }
+    return results;
   };
 
   const handleSubmit = () => {
-    console.log('handleSubmit');
     let filteredDates = generateDates();
     setFilterDate(filteredDates);
-    console.log('Filtered Dates:', filteredDates);
   };
 
   return (
-    <div>
+    <div id="outer">
+      <h1>Date Picker</h1>
       <div id="main">
-        <div id="calander">
+        <div id="calender">
           <DatePicker
+            className="date-picker"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat="yyyy/MM/dd"
@@ -123,6 +117,7 @@ function DateFilter() {
             closeOnSelect={true}
           />
           <DatePicker
+            className="date-picker"
             selected={endDate}
             onChange={(date) => setEndDate(date)}
             dateFormat="yyyy/MM/dd"
@@ -135,6 +130,8 @@ function DateFilter() {
             id="dropdown1"
             value={dropdown1Value}
             onChange={handleDropdown1Change}
+            className="dropdown"
+            // size="5"
           >
             <option value="All">All</option>
             <option value="1">1st</option>
@@ -145,7 +142,11 @@ function DateFilter() {
             <option value="6">6th</option>
             <option value="7">7th</option>
           </select>
-          <select value={dropdown2Value} onChange={handleDropdown2Change}>
+          <select
+            value={dropdown2Value}
+            className="dropdown"
+            onChange={handleDropdown2Change}
+          >
             <option value="Sunday">Sunday</option>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -154,15 +155,19 @@ function DateFilter() {
             <option value="Friday">Friday</option>
             <option value="Saturday">Saturday</option>
           </select>
-          <select value={dropdown3Value} onChange={handleDropdown3Change}>
+          <select
+            value={dropdown3Value}
+            className="dropdown"
+            onChange={handleDropdown3Change}
+          >
             <option value="Month">Month</option>
             <option value="Week">Week</option>
           </select>
-          <button onClick={handleSubmit}>Submit</button>
         </div>
+        <br />
+        <button onClick={handleSubmit}>Submit</button>
       </div>
       <div>
-        <h1>Filter Dates</h1>
         <div className="table">
           <table>
             <thead>

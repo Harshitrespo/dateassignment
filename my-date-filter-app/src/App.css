@@ -1,40 +1,87 @@
-/* Add this CSS in a separate stylesheet or in a <style> tag in your component */
+body {
+  background-color: rgb(198, 189, 197);
+}
 .table {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Center vertically within the viewport */
 }
-#main{
-  display: flex;
+#outer h1 {
+  text-align: center;
+  margin-top: 50px;
 }
-#dropdowns{
+#main {
   display: flex;
+  margin: 50px 0 0 100px;
+}
+#dropdowns {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+.date-picker {
   justify-content: space-between;
 }
-#calander{
+#calender {
   display: flex;
-  justify-content: space-between;
-  /* align-items: */
-  width: 30%;
+  width: 40%;
+  font-family: cursive, sans-serif;
+  color: #040000;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
 
+select {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: cursive, sans-serif;
+  outline: 0;
+  background-color: #f2f2f2;
+  color: #040000;
+  border: 2px solid rgb(206, 125, 141);
+  padding: 4px;
+  border-radius: 9px;
+  text-decoration: double;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-left: 25px;
+  padding-right: 30px;
+}
+button {
+  font-family: cursive, sans-serif;
+  background: #44dbe0;
+  width: 6%;
+  border-radius: 9px;
+  text-decoration: double;
+  justify-content: space-between;
+  color: #040000;
+  border: 2px solid rgb(206, 125, 141);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  display: block !important;
+}
 table {
-  width: 25%;
+  width: 20%;
+  margin-left: 170px;
   border-collapse: collapse;
-  margin-top: 20px;
-  border-radius :10%
+  margin-top: 40px;
+  border-radius: 10%;
+  font-family: cursive, sans-serif;
 }
 
-th, td {
+th,
+td {
   border: 3px solid #d18787;
   padding: 8px;
   text-align: center;
-  text-decoration:double;
+  text-decoration: double;
 }
 
 th {
-  background-color:#cf8ab9;
+  background-color: #cf8ab9;
 }
 
 tr:nth-child(even) {
@@ -45,14 +92,14 @@ tr:hover {
   background-color: #efd1e5;
 }
 
-.navbar{
+.navbar {
+  /* display: flex; */
   justify-content: center;
   align-items: center;
+  font-family: cursive, sans-serif;
 }
 a:hover {
   background-color: #efd1e5;
 }
-li{
- 
-
+li {
 }
